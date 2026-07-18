@@ -1,0 +1,200 @@
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background:
+    linear-gradient(rgba(8,15,40,0.7), rgba(8,15,40,0.7)),
+    url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop");
+    background-size: cover;
+    background-position: center;
+}
+
+.container{
+    width: 100%;
+    max-width: 450px;
+}
+
+.child{
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-radius: 30px;
+    padding: 35px 28px;
+    box-shadow: 
+    0 10px 40px rgba(0,0,0,0.35),
+    inset 0 0 0 rgba(255,255,255,0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.child::before{
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    top: -70px;
+    right: -70px;
+}
+
+.child::after{
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 50%;
+    bottom: -60px;
+    left: -60px;
+}
+
+.heading{
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.heading h1{
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.heading p{
+    margin-top: 8px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+}
+
+.search-box{
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 2;
+}
+
+.city-name{
+    flex: 1;
+    padding: 15px 18px;
+    border-radius: 16px;
+    border: none;
+    outline: none;
+    background: rgba(255,255,255,0.18);
+    color: white;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+.city-name::placeholder{
+    color: rgba(255,255,255,0.75);
+}
+
+.city-name:focus{
+    background: rgba(255,255,255,0.25);
+    box-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+.btn{
+    padding: 14px 22px;
+    border: none;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #ffffff, #dbeafe);
+    color: #0f172a;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn:hover{
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(255,255,255,0.25);
+}
+
+.weather-card{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.weather-card div{
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 16px 18px;
+    border-radius: 18px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.weather-card div:hover{
+    background: rgba(255,255,255,0.2);
+    transform: translateX(6px);
+}
+
+.weather-temp::before{
+    content: "🌡";
+}
+
+.weather-feel_like::before{
+    content: "🥶";
+}
+
+.weather-huminidity::before{
+    content: "💧";
+}
+
+.weather-description::before{
+    content: "☁";
+}
+
+.weather-speed::before{
+    content: "🌬";
+}
+
+.country-name::before{
+    content: "📍";
+}
+
+@media(max-width: 500px){
+
+    .child{
+        padding: 28px 20px;
+    }
+
+    .heading h1{
+        font-size: 30px;
+    }
+
+    .search-box{
+        flex-direction: column;
+    }
+
+    .btn{
+        width: 100%;
+    }
+
+    .weather-card div{
+        font-size: 15px;
+    }
+}
